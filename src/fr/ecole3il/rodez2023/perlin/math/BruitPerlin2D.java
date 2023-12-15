@@ -31,6 +31,7 @@ public class BruitPerlin2D extends Bruit2D {
 		this.permutation = PERMUTATION;
 	}
 
+	@SuppressWarnings("unused")
 	@Override
 	public double bruit2D(double x, double y) {
 		double tempX, tempY;

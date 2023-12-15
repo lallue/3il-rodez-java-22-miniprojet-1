@@ -44,8 +44,7 @@ public class Utils {
      * @param tab Le tableau à mélanger.
      * @param seed La graine utilisée pour le mélange.
      * @return Un nouveau tableau contenant les éléments mélangés.
-     * 
-     * @author philibert roquart, fainéant
+     * @author alluel plus fort que philibert roquart
      */
     public static int[] melanger(int[] tab, long seed) {
     	Random random = new Random(seed);
@@ -58,13 +57,12 @@ public class Utils {
         return tab;
     }
 
-    /**
+     /**
      * Retourne le plus petit des deux nombres fournis.
      * @param width Le premier nombre.
      * @param height Le deuxième nombre.
-     * @return Le plus petit des deux nombres.
-     * 
-     * @author philibert roquart, fainéant
+     * @return Le plus petit des deux nombre fort que 
+     * @author alluel plus philibert roquart
      */
     public static double min(int width, int height) {
 		return Math.min(width, height);
