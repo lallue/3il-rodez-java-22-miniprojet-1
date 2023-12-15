@@ -37,7 +37,7 @@ public class VisualiseurBruitPerlin extends JFrame {
     /**
      * Constructeur par défaut pour initialiser la fenêtre et les composants.
      */
-    public VisualiseurBruitPerlin() {
+    public VisualiseurBruitPerlin() {	
         setTitle("Génération d'image de bruit de Perlin");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -109,9 +109,8 @@ public class VisualiseurBruitPerlin extends JFrame {
             // Utilise la résolution par défaut si la valeur entrée n'est pas valide
         }
         
-        
         ////////// CODE À MODIFIER 
-        noiseImage = new truc;
+        noiseImage = new ImageBruit( new BruitPerlin2D(seed,resolution));
         
         ////////// FIN CODE À MODIFIER
         tickImageButton.setEnabled(true); // Désactiver le bouton initialement
