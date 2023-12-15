@@ -84,7 +84,7 @@ public class BruitPerlin2D extends Bruit2D {
 
 		tmp = y - y0;
 		Cy = 3 * tmp * tmp - 2 * tmp * tmp * tmp;
-
-		return (Li1 + Cx ) * (Li2 - Cy);
+		
+		return Li1 + Cy * (Li2 - Li1);
 	}
 }
