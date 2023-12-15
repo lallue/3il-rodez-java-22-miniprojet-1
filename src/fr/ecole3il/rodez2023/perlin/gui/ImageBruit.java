@@ -45,7 +45,6 @@ public class ImageBruit {
                 double bruit = fonctionDeBruit((dx * frequence) + time, (dy * frequence) + time);
                 bruit = (bruit - 1) / 2;
                 int b = (int) (bruit * 0xFF);
-                int g = b * 0x100;
                 int r = b * 0x10000;
                 int finalValue = r;
                 image.setRGB(x, y, finalValue);
