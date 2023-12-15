@@ -46,4 +46,20 @@ public class Terrain {
     public double getAltitude() {
         return altitude;
     }
+
+    
+    		
+	public void setHydrometrie(double hydrometrie) {
+		if (hydrometrie <0 || hydrometrie >1 )
+			
+		this.hydrometrie = hydrometrie;
+	}
+
+	public void setTemperature(double temperature) {
+		this.temperature = temperature;
+	}
+
+	public void setAltitude(double altitude) {
+		this.altitude = altitude;
+	}
 }
