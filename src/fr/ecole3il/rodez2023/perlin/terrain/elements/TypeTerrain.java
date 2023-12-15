@@ -1,14 +1,13 @@
 package fr.ecole3il.rodez2023.perlin.terrain.elements;
 
-import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.InputStream;
 
- /**
- * Enumération des différents types de terrain avec leurs images associées.
- * @author alluel
- */
+import fr.ecole3il.rodez2023.perlin.Utils;
+
+	 /**
+	  *@author alluel	 
+	  * Enumération des différents types de terrain avec leurs images associées.
+	 */
 public enum TypeTerrain {
 
     COLLINES("Collines", "hills.png"),
@@ -22,8 +21,7 @@ public enum TypeTerrain {
     TOUNDRA("Toundra", "tundra.png");
 
     private final String nom;
-    private final String cheminImage;
-    private BufferedImage image;
+    private final BufferedImage image;
 
     /**
      * Constructeur privé pour chaque type de terrain.
@@ -33,13 +31,7 @@ public enum TypeTerrain {
      */
     TypeTerrain(String nom, String cheminImage) {
         this.nom = nom;
-        this.cheminImage = cheminImage;
-        try {
-            InputStream inputStream = getClass().getResourceAsStream("/data/" + cheminImage);
-            this.image = ImageIO.read(inputStream);
-        } catch (IOException e) {
-            e.printStackTrace(); // Gérer les erreurs de chargement d'image
-        }
+        this.image = Utils.chargerTuile("/data/" + cheminImage);
     }
 
     /**
@@ -52,20 +44,21 @@ public enum TypeTerrain {
     }
 
     /**
-     * Obtient le chemin de l'image associée au type de terrain.
-     *
-     * @return Le chemin de l'image.
-     */
-    public String getCheminImage() {
-        return cheminImage;
-    }
-
-    /**
      * Obtient l'image associée au type de terrain.
      *
      * @return L'objet BufferedImage.
      */
     public BufferedImage getImage() {
         return image;
+    }
+
+    /**
+     * Convertit le TypeTerrain en chaîne de caractères.
+     *
+     * @return Le nom du type de terrain.
+     */
+    @Override
+    public String toString() {
+        return nom;
     }
 }
