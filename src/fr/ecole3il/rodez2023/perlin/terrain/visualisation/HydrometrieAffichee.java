@@ -3,7 +3,7 @@ package fr.ecole3il.rodez2023.perlin.terrain.visualisation;
 /*
 * @ResteCode Gestion des valeurs
 */
-public enum HydrometieAfichee {
+public enum HydrometrieAffichee {
    SEC(0.33),
    MOYEN(0.66),
    HUMIDE(1.0);
@@ -16,7 +16,7 @@ public enum HydrometieAfichee {
     *
     * @param valeurLimite La limite associée à la valeur.
     */
-   HydrometieAfichee(double valeurLimite) {
+   HydrometrieAffichee(double valeurLimite) {
        this.valeurLimite = valeurLimite;
    }
 
