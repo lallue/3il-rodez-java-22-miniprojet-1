@@ -19,8 +19,9 @@ public class ManipulateurCarte {
      * Charge une carte à partir d'un fichier spécifié.
      * @param cheminFichier Le chemin vers le fichier contenant les données de la carte.
      * @return Une instance de Carte chargée à partir du fichier.
+     * @throws TerrainInexistant 
      */
-    public static Carte chargerCarte(String cheminFichier) {
+    public static Carte chargerCarte(String cheminFichier) throws TerrainInexistant {
         return new Carte(Utils.lireContenuFichier(cheminFichier));
     }
     
@@ -28,8 +29,9 @@ public class ManipulateurCarte {
      * Enregistre une carte dans un fichier spécifié.
      * @param carte La carte à enregistrer.
      * @param cheminFichier Le chemin vers le fichier où la carte sera enregistrée.
+     * @throws TerrainInexistant 
      */
-    public static void enregistrerCarte(Carte carte, String cheminFichier) {
+    public static void enregistrerCarte(Carte carte, String cheminFichier) throws TerrainInexistant {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(cheminFichier))) {
             // Écriture des métadonnées de la carte
             writer.write(carte.getNom() + "\n");

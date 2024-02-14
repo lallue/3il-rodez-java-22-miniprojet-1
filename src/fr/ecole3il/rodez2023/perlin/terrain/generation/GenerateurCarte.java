@@ -56,4 +56,6 @@ public abstract class GenerateurCarte {
     public long getGraine() {
         return graine;
     }
+
+	public abstract Terrain creerTerrain(int x, int y);
 }
