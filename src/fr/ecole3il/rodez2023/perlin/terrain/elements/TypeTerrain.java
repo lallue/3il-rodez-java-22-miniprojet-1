@@ -20,45 +20,26 @@ public enum TypeTerrain {
     PLAINE("Plaine", "plain.png"),
     TOUNDRA("Toundra", "tundra.png");
 
-    private final String nom;
-    private final BufferedImage image;
-
-    /**
-     * Constructeur privé pour chaque type de terrain.
-     *
-     * @param nom           Le nom du type de terrain.
-     * @param cheminImage   Le chemin de l'image associée au type de terrain.
-     */
-    TypeTerrain(String nom, String cheminImage) {
+	private final String nom;
+    private final String nomImage;
+    private BufferedImage image;
+    /**@Constructor construteur d'un type de terrain*/
+    TypeTerrain(String nom, String nomImage) {
         this.nom = nom;
-        this.image = Utils.chargerTuile("/data/" + cheminImage);
+        this.nomImage = nomImage;
+        this.image = fr.ecole3il.rodez2023.perlin.Utils.chargerTuile("data/" + nomImage);
     }
-
-    /**
-     * Obtient le nom du type de terrain.
-     *
-     * @return Le nom du type de terrain.
-     */
-    public String getNom() {
-        return nom;
-    }
-
-    /**
-     * Obtient l'image associée au type de terrain.
-     *
-     * @return L'objet BufferedImage.
-     */
+    /**@Getter getImage --> permet de récupérer l'image
+     * @Getter getNom --> permet de récupérer le nom du terrain
+     * @Override toString--> réécriture de la méthode toString pour l'adapter à la demande*/
     public BufferedImage getImage() {
         return image;
     }
-
-    /**
-     * Convertit le TypeTerrain en chaîne de caractères.
-     *
-     * @return Le nom du type de terrain.
-     */
+    public String getNom() {
+    	return nom;
+    }
     @Override
     public String toString() {
-        return nom;
+        return "Voici le nom français du terrain: "+nom+" et voici son image associé: "+ nomImage;
     }
 }
