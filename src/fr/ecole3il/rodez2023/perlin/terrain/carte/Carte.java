@@ -8,7 +8,7 @@ import fr.ecole3il.rodez2023.perlin.terrain.generation.GenerateurCarte;
 /**
  * Classe représentant une carte avec un nom, une largeur, une hauteur et un tableau de Terrain.
  *
- * @author Votre Nom
+ * @author alluel
  */
 public class Carte {
 
