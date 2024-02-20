@@ -68,7 +68,7 @@ public class VisualiseurTerrain {
     public DetermineurTerrain getDetermineurTerrain() {
         return determineurTerrain;
     }
-
+    
     public Carte getCarte() {
         return carte;
     }

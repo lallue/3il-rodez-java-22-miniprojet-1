@@ -27,7 +27,7 @@ public enum TypeTerrain {
     TypeTerrain(String nom, String nomImage) {
         this.nom = nom;
         this.nomImage = nomImage;
-        this.image = fr.ecole3il.rodez2023.perlin.Utils.chargerTuile("data/" + nomImage);
+        this.image = fr.ecole3il.rodez2023.perlin.Utils.chargerTuile("data/tiles/" + nomImage);
     }
     /**@Getter getImage --> permet de récupérer l'image
      * @Getter getNom --> permet de récupérer le nom du terrain
