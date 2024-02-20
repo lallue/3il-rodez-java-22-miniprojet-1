@@ -1,21 +1,31 @@
 package fr.ecole3il.rodez2023.perlin.terrain.generation;
 
 import java.util.Random;
+
+import fr.ecole3il.rodez2023.perlin.terrain.elements.MauvaiseValeurException;
 import fr.ecole3il.rodez2023.perlin.terrain.elements.Terrain;
 
 
 public class GenerateurAleatoire extends GenerateurCarte {
 
+    Random random;
+
     public GenerateurAleatoire(long graine) {
         super(graine);
+        this.random = new Random(graine);
     }
 
     @Override
     protected Terrain genererTerrain(int i, int j, int largeur, int hauteur) {
-        Random pifometre = new Random();
-        double altitude = pifometre.nextDouble(0, 1);
-        double hydrometrie = pifometre.nextDouble(-1, 1);
-        double temperature = pifometre.nextDouble(0, 1);
-        return new Terrain(altitude, hydrometrie, temperature);
+        double altitude = this.random.nextDouble() * 2 - 1;
+        double hydrometrie = this.random.nextDouble();
+        double temperature = this.random.nextDouble();
+
+        try {
+            return new Terrain(altitude, hydrometrie, temperature);
+        } catch (MauvaiseValeurException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

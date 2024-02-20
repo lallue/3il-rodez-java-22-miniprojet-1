@@ -23,7 +23,6 @@ import javax.swing.SwingUtilities;
 
 import fr.ecole3il.rodez2023.perlin.terrain.carte.Carte;
 import fr.ecole3il.rodez2023.perlin.terrain.carte.ManipulateurCarte;
-import fr.ecole3il.rodez2023.perlin.terrain.carte.TerrainInexistant;
 import fr.ecole3il.rodez2023.perlin.terrain.concrets.VisualiseurTerrainEnonce;
 import fr.ecole3il.rodez2023.perlin.terrain.elements.TypeTerrain;
 import fr.ecole3il.rodez2023.perlin.terrain.generation.GenerateurAleatoire;
@@ -59,15 +58,9 @@ public class VisualiseurCarteTerrain extends JFrame {
 
         for (int y = 0; y < hauteur; y++) {
             for (int x = 0; x < largeur; x++) {
-                try {
-                    TypeTerrain type = vte.getTypeTerrain(x, y);
-                    BufferedImage image = type.getImage();
-                    g.drawImage(image, x * tuileWidth, y * tuileHeight, tuileWidth, tuileHeight, null);
-                } catch (TerrainInexistant e) {
-                    
-                    System.out.println("Terrain inexistant : " + e.getMessage());
-                    
-                }
+                TypeTerrain type = vte.getTypeTerrain(x, y);
+                BufferedImage image = type.getImage();
+                g.drawImage(image, x * tuileWidth, y * tuileHeight, tuileWidth, tuileHeight, null);
             }
         }
     }
@@ -101,18 +94,9 @@ public class VisualiseurCarteTerrain extends JFrame {
 		        System.out.println("Coordonnées de la souris - X: " + x + ", Y: " + y);
 
 		        if (x >= 0 && x < carte.getLargeur() && y >= 0 && y < carte.getHauteur()) {
-		            try {
-		                // Crée le contenu à afficher dans la fenêtre modale
-		                String contenu = "Altitude: " + vte.getAltitudeAffichee(x, y) + "\nHydrométrie: " + vte.getHydrometrieAffichee(x, y)+ "\nTempérature: " + vte.getTemperatureAffichee(x, y);
-
-		                // Affiche une fenêtre modale avec les informations de la tuile
-		                JOptionPane.showMessageDialog(cartePanel, contenu, "Informations de la tuile", JOptionPane.INFORMATION_MESSAGE);
-		            } catch (TerrainInexistant e1) {
-		                // Gérer l'exception ici, par exemple afficher un message d'erreur
-		                System.out.println("Terrain inexistant : " + e1.getMessage());
-		            }
+		            TypeTerrain type = vte.getTypeTerrain(x, y);
+		            terrainLabel.setText("Terrain: " + type.toString());
 		        }
-
 		    }
 
 		    @Override
@@ -131,18 +115,13 @@ public class VisualiseurCarteTerrain extends JFrame {
 		        int y = e.getY() / tuileHeight;
 
 		        if (x >= 0 && x < carte.getLargeur() && y >= 0 && y < carte.getHauteur()) {
-		            try {
-		                // Crée le contenu à afficher dans la fenêtre modale
-		                String contenu = "Altitude: " + vte.getAltitudeAffichee(x, y) + "\nHydrométrie: " + vte.getHydrometrieAffichee(x, y)+ "\nTempérature: " + vte.getTemperatureAffichee(x, y);
 
-		                // Affiche une fenêtre modale avec les informations de la tuile
-		                JOptionPane.showMessageDialog(cartePanel, contenu, "Informations de la tuile", JOptionPane.INFORMATION_MESSAGE);
-		            } catch (TerrainInexistant e1) {
-		                // Gérer l'exception ici, par exemple afficher un message d'erreur
-		                System.out.println("Terrain inexistant : " + e1.getMessage());
-		            }
+		            // Crée le contenu à afficher dans la fenêtre modale
+		            String contenu = "Altitude: " + vte.getAltitudeAffichee(x, y) + "\nHydrométrie: " + vte.getHydrometrieAffichee(x, y)+ "\nTempérature: " + vte.getTemperatureAffichee(x, y);
+
+		            // Affiche une fenêtre modale avec les informations de la tuile
+		            JOptionPane.showMessageDialog(cartePanel, contenu, "Informations de la tuile", JOptionPane.INFORMATION_MESSAGE);
 		        }
-
 		    }
 		});
 		add(cartePanel, BorderLayout.CENTER);
@@ -183,12 +162,7 @@ public class VisualiseurCarteTerrain extends JFrame {
 		            String cheminFichier = fichierSelectionne.getAbsolutePath();
 
 		            // Enregistrer la carte dans le fichier sélectionné
-		            try {
-						ManipulateurCarte.enregistrerCarte(carte, cheminFichier);
-					} catch (TerrainInexistant e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
+		            ManipulateurCarte.enregistrerCarte(carte, cheminFichier);
 		        }
 		    }
 		});
@@ -258,5 +232,3 @@ public class VisualiseurCarteTerrain extends JFrame {
 		});
 	}
 }
-
-

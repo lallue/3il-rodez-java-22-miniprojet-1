@@ -1,6 +1,6 @@
 package fr.ecole3il.rodez2023.perlin.terrain.visualisation;
 
-/*
+/**
 * @ResteCode Gestion des valeurs
 */
 public enum HydrometrieAffichee {
