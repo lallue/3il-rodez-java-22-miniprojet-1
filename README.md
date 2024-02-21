@@ -34,7 +34,6 @@ Nous retirons cet extrait d'algorithme de la classe, car déterminer le type de 
 les attributs et méthodes qui sont communs à tous les terrains.
 
 
-# Signé ALLUE Luc
 
 # Le Grand Final 🚀✨
 
@@ -46,7 +45,7 @@ En ce grand final, nous célébrons le mélange harmonieux d'algorithmes, la dan
 
 ## Gratitude et Reconnaissances 🙏
 
-Un grand merci à tous ceux qui ont contribué, collaboré et saupoudré leur poussière magique sur cette entreprise. 🌈✨ Votre dévouement et votre créativité ont rendu ce projet véritablement extraordinaire.
+Un grand merci à tous ceux qui ont contribué, collaboré et saupoudré leur poussière magique sur ce projet. 🌈✨ Votre dévouement et votre créativité ont rendu ce projet véritablement extraordinaire.
 
 ## Regard vers l'Avenir 🔮
 
@@ -54,5 +53,6 @@ Alors que ce chapitre se referme, de nouvelles aventures attendent à l'horizon.
 
 ## Continuez à Coder, Continuez à Rêver ! 🌌💻
 
-Vers l'infini et au-delà ! 🚀✨ Joyeux codage, rêveurs ! Jusqu'à ce que nous nous retrouvions dans le vaste royaume du code. 👩‍💻👨‍💻
+Vers l'infini et au-delà ! 🚀✨ Joyeux codage, Chevaliers Jedi ! Jusqu'à ce que nous nous retrouvions dans le vaste royaume du code. 👩‍💻👨‍💻 Que le code soit avec vous !
 
+# Signé ALLUE Luc
