@@ -44,12 +44,12 @@ public class Utils {
      * @param tab Le tableau à mélanger.
      * @param seed La graine utilisée pour le mélange.
      * @return Un nouveau tableau contenant les éléments mélangés.
-     * @author alluel plus fort que philibert roquart
      */
     public static int[] melanger(int[] tab, long seed) {
-    	Random random = new Random(seed);
-        for (int i = tab.length - 1; i < 0; i--) {
+        Random random = new Random(seed);
+        for (int i = tab.length - 1; i > 0; i--) {
             int index = random.nextInt(i + 1);
+            // Échange des éléments
             int temp = tab[index];
             tab[index] = tab[i];
             tab[i] = temp;
@@ -57,23 +57,20 @@ public class Utils {
         return tab;
     }
 
-     /**
+    /**
      * Retourne le plus petit des deux nombres fournis.
      * @param width Le premier nombre.
      * @param height Le deuxième nombre.
-     * @return Le plus petit des deux nombre fort que 
-     * @author alluel plus philibert roquart
+     * @return Le plus petit des deux nombres.
      */
     public static double min(int width, int height) {
-		return Math.min(width, height);
+        return Math.min(width, height);
     }
 
     /**
      * Lit le contenu d'un fichier texte et le retourne sous forme de chaîne de caractères.
      * @param cheminFichier Le chemin vers le fichier à lire.
      * @return Le contenu du fichier lu sous forme de chaîne de caractères.
-     * 
-     * Cette fonction n'est pas commentée, on la verra en Java Avancé.
      */
     public static String lireContenuFichier(String cheminFichier) {
         StringBuilder contenu = new StringBuilder();

@@ -28,7 +28,7 @@ public class BruitAleatoire extends Bruit2D {
     @Override
     public double bruit2D(double x, double y) {
         // Utilisation de la classe Random pour générer du bruit aléatoire
-        Random random = new Random();
+        Random random = new Random(getGraine());
         return random.nextDouble();
     }
 }

@@ -25,15 +25,27 @@ public class BruitPerlin2D extends Bruit2D {
 			176, 115, 121, 50, 45, 127, 4, 150, 254, 138, 236, 205, 93, 222, 114, 67, 29, 24, 72, 243, 141, 128, 195,
 			78, 66, 215, 61, 156, 180 };
 
-	private final int[] permutation;
+	 private final int[] permutation;
 
-	public BruitPerlin2D(long graine, double resolution) {
-		super(graine, resolution);
-		this.permutation= Utils.melanger(PERMUTATION, graine);
-	}
+	    /**
+	     * Constructeur de la classe BruitPerlin2D.
+	     * 
+	     * @param graine      La graine utilisée pour initialiser le générateur de bruit.
+	     * @param resolution  La résolution utilisée pour la génération du bruit.
+	     */
+	    public BruitPerlin2D(long graine, double resolution) {
+	        super(graine, resolution);
+	        this.permutation = Utils.melanger(PERMUTATION, graine);
+	    }
 
-	@SuppressWarnings("unused")
-	@Override
+	    /**
+	     * Méthode qui génère du bruit de Perlin en deux dimensions.
+	     * 
+	     * @param x Coordonnée x.
+	     * @param y Coordonnée y.
+	     * @return Valeur de bruit de Perlin en 2D pour les coordonnées fournies.
+	     */
+	    @Override
 	public double bruit2D(double x, double y) {
 		double tempX, tempY;
 		int x0, y0, ii, jj, gi0, gi1, gi2, gi3;
