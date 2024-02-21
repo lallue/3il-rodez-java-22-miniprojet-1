@@ -4,10 +4,12 @@ import java.awt.image.BufferedImage;
 
 import fr.ecole3il.rodez2023.perlin.Utils;
 
-	 /**
-	  *@author alluel	 
-	  * Enumération des différents types de terrain avec leurs images associées.
-	 */
+/**
+ * L'énumération TypeTerrain représente les différents types de terrain avec leurs images associées.
+ * Chaque type de terrain est défini par un nom et le nom de l'image représentative.
+ * L'énumération fournit également des méthodes pour récupérer le nom et l'image associée à chaque type de terrain.
+ * L'auteur de cette énumération est mentionné comme "alluel".
+ */
 public enum TypeTerrain {
 
     COLLINES("Collines", "hills.png"),
@@ -20,25 +22,45 @@ public enum TypeTerrain {
     PLAINE("Plaine", "plain.png"),
     TOUNDRA("Toundra", "tundra.png");
 
-	private final String nom;
+    private final String nom;
     private final String nomImage;
-    /**@Constructor construteur d'un type de terrain*/
+
+    /**
+     * Constructeur de l'énumération TypeTerrain.
+     *
+     * @param nom      Le nom du type de terrain.
+     * @param nomImage Le nom de l'image associée au type de terrain.
+     */
     TypeTerrain(String nom, String nomImage) {
         this.nom = nom;
         this.nomImage = nomImage;
     }
-    /**@Getter getImage --> permet de récupérer l'image
-     * @Getter getNom --> permet de récupérer le nom du terrain
-     * @Override toString--> réécriture de la méthode toString pour l'adapter à la demande*/
+
+    /**
+     * Permet de récupérer le nom du type de terrain.
+     *
+     * @return Le nom du type de terrain.
+     */
     public String getNom() {
-    	return nom;
+        return nom;
     }
+
+    /**
+     * Permet de récupérer l'image associée au type de terrain.
+     *
+     * @return L'image associée au type de terrain sous forme de BufferedImage.
+     */
+    public BufferedImage getImage() {
+        return Utils.chargerTuile(nomImage);
+    }
+
+    /**
+     * Réécriture de la méthode toString pour adapter l'affichage du type de terrain.
+     *
+     * @return Une chaîne de caractères représentant le nom français du terrain et son image associée.
+     */
     @Override
     public String toString() {
-        return "Voici le nom français du terrain: "+nom+" et voici son image associé: "+ nomImage;
+        return "Voici le nom français du terrain : " + nom + " et voici son image associée : " + nomImage;
     }
-	public BufferedImage getImage() {
-		// TODO Auto-generated method stub
-		return  Utils.chargerTuile(nomImage);
-	}
 }
