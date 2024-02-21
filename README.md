@@ -32,3 +32,27 @@ Ces déclarations indiquent que les attributs `hydrometrie`, `temperature` et `a
 
 Nous retirons cet extrait d'algorithme de la classe, car déterminer le type de terrain n'est pas de sa responsabilité. La classe devrait uniquement inclure 
 les attributs et méthodes qui sont communs à tous les terrains.
+
+
+#### Signé ALLUE Luc
+
+# Le Grand Final 🚀✨
+
+Et voilà, chers passionnés de code ! 🎉 Les rideaux tombent, le code se repose, et notre projet achève son magnifique voyage. 🌟
+
+## Une Symphonie de Code 🎵
+
+En ce grand final, nous célébrons le mélange harmonieux d'algorithmes, la danse élégante des fonctions et l'orchestration des pixels qui ont donné vie à ce projet. 🤖💻✨
+
+## Gratitude et Reconnaissances 🙏
+
+Un grand merci à tous ceux qui ont contribué, collaboré et saupoudré leur poussière magique sur cette entreprise. 🌈✨ Votre dévouement et votre créativité ont rendu ce projet véritablement extraordinaire.
+
+## Regard vers l'Avenir 🔮
+
+Alors que ce chapitre se referme, de nouvelles aventures attendent à l'horizon. Que votre code compile toujours, que vos erreurs soient éclairantes et que vos projets soient aussi passionnants que la prochaine sortie à succès.
+
+## Continuez à Coder, Continuez à Rêver ! 🌌💻
+
+Vers l'infini et au-delà ! 🚀✨ Joyeux codage, rêveurs ! Jusqu'à ce que nous nous retrouvions dans le vaste royaume du code. 👩‍💻👨‍💻
+
