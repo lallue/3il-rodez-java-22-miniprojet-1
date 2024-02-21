@@ -21,7 +21,7 @@ public class GenerateurAleatoire extends GenerateurCarte {
      */
     public GenerateurAleatoire(long graine) {
         super(graine);
-        this.random = new Random(graine);
+        this.random = new Random();
     }
 
     /**
