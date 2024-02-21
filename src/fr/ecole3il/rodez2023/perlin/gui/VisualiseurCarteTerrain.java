@@ -31,7 +31,7 @@ import fr.ecole3il.rodez2023.perlin.terrain.generation.GenerateurPerlin;
 
 /**
  * 
- * @author proussille
+ * @author proussille et alluel
  * La classe VisualiseurCarteTerrain représente un visualiseur de carte de terrain
  * qui permet de charger, enregistrer et générer des cartes, ainsi que d'afficher leur représentation graphique.
  */
