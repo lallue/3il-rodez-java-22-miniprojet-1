@@ -60,8 +60,8 @@ public class BruitPerlin2D extends Bruit2D {
 		y0 = (int) (y);
 
 		// Masquage pour récupérer les indices de permutation
-		ii = x0 & 255;
-		jj = y0 & 255;
+		ii = x0 % 255;
+		jj = y0 % 255;
 
 		// Récupérer les indices de gradient associés aux coins du quadrilatère
 		gi0 = permutation[ii + permutation[jj]] % 8;
