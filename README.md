@@ -34,7 +34,7 @@ Nous retirons cet extrait d'algorithme de la classe, car déterminer le type de 
 les attributs et méthodes qui sont communs à tous les terrains.
 
 
-#### Signé ALLUE Luc
+# Signé ALLUE Luc
 
 # Le Grand Final 🚀✨
 
