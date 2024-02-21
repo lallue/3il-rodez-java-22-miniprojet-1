@@ -55,4 +55,4 @@ Alors que ce chapitre se referme, de nouvelles aventures attendent à l'horizon.
 
 Vers l'infini et au-delà ! 🚀✨ Joyeux codage, Chevaliers Jedi ! Jusqu'à ce que nous nous retrouvions dans le vaste royaume du code. 👩‍💻👨‍💻 Que le code soit avec vous !
 
-# Signé ALLUE Luc
+# Signer ALLUE Luc
