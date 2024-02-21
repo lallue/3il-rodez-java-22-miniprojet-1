@@ -20,4 +20,4 @@ Alors que cette comédie de classes touche à sa fin, que la Force du Code soit 
 
 ## Continuez à Coder, même dans les Nuages d'Associations ! 🌌💻
 
-Vers l'infini et au-delà ! Que vos diagrammes de classe soient aussi clairs que le ciel d'une nuit étoilée. Et n'oubliez pas, même les diagrammes de classe ont un côté drôle ! 😄🚀
+Vers l'infini et au-delà ! Que vos diagrammes de classe soient aussi clairs que le ciel d'une nuit étoilée. Et n'oubliez pas, même les diagrammes de classe ont un côté ~~drôle~~ sombre !! 😄🚀
