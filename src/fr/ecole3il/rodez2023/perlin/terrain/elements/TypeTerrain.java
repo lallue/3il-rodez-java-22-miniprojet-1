@@ -22,19 +22,14 @@ public enum TypeTerrain {
 
 	private final String nom;
     private final String nomImage;
-    private BufferedImage image;
     /**@Constructor construteur d'un type de terrain*/
     TypeTerrain(String nom, String nomImage) {
         this.nom = nom;
         this.nomImage = nomImage;
-        this.image = fr.ecole3il.rodez2023.perlin.Utils.chargerTuile("data/tiles/" + nomImage);
     }
     /**@Getter getImage --> permet de récupérer l'image
      * @Getter getNom --> permet de récupérer le nom du terrain
      * @Override toString--> réécriture de la méthode toString pour l'adapter à la demande*/
-    public BufferedImage getImage() {
-        return image;
-    }
     public String getNom() {
     	return nom;
     }
@@ -42,4 +37,8 @@ public enum TypeTerrain {
     public String toString() {
         return "Voici le nom français du terrain: "+nom+" et voici son image associé: "+ nomImage;
     }
+	public BufferedImage getImage() {
+		// TODO Auto-generated method stub
+		return  Utils.chargerTuile(nomImage);
+	}
 }

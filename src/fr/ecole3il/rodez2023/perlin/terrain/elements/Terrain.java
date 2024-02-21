@@ -21,9 +21,10 @@ public class Terrain {
      * @param altitude      Valeur d'altitude du terrain.
      */
     public Terrain(double hydrometrie, double temperature, double altitude) {
-        setHydrometrie(hydrometrie);
+    	setHydrometrie(hydrometrie);
         setTemperature(temperature);
         setAltitude(altitude);
+        
     }
 
     /**

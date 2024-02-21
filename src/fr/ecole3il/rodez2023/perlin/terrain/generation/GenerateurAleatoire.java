@@ -12,12 +12,12 @@ public class GenerateurAleatoire extends GenerateurCarte {
 
     public GenerateurAleatoire(long graine) {
         super(graine);
-        this.random = new Random(graine);
+        this.random = new Random();
     }
 
     @Override
     protected Terrain genererTerrain(int i, int j, int largeur, int hauteur) {
-        double altitude = this.random.nextDouble() * 2 - 1;
+        double altitude = this.random.nextDouble();
         double hydrometrie = this.random.nextDouble();
         double temperature = this.random.nextDouble();
 
