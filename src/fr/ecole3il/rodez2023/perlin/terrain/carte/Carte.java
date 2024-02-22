@@ -49,11 +49,10 @@ public class Carte {
 
         for (int y = 0; y < hauteur; y++) {
             for (int x = 0; x < largeur; x++) {
-                double altitude = scanner.nextDouble();
-                double hydrometrie = scanner.nextDouble();
-                double temperature = scanner.nextDouble();
+                double altitude = Double.parseDouble(scanner.next());
+                double hydrometrie = Double.parseDouble(scanner.next());
+                double temperature = Double.parseDouble(scanner.next());
                 terrains[x][y] = new Terrain(altitude, hydrometrie, temperature);
-                scanner.nextLine();
             }
         }
 
