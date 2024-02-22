@@ -40,7 +40,7 @@ public class VisualiseurCarteTerrain extends JFrame {
     private static final long serialVersionUID = -4664266628089280746L;
     private final JPanel cartePanel;
     private Carte carte;
-    private JLabel terrainLabel;
+    private JLabel terrainLabel; 
     private VisualiseurTerrainEnonce vte;
 
     /**
