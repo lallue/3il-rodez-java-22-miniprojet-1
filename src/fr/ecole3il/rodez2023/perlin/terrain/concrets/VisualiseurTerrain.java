@@ -62,13 +62,12 @@ public class VisualiseurTerrain {
     public HydrometrieAffichee getHydrometrieAffichee(int x, int y) throws TerrainInexistant {
         Terrain terrain = carte.getTerrain(x, y);
         double hydrometrie = terrain.getHydrometrie();
-
-        if (hydrometrie < HydrometrieAffichee.SEC.getValeurLimite()) {
-            return HydrometrieAffichee.SEC;
-        } else if (hydrometrie < HydrometrieAffichee.MOYEN.getValeurLimite()) {
-            return HydrometrieAffichee.MOYEN;
-        } else {
+        if (hydrometrie < 0.33) {
             return HydrometrieAffichee.HUMIDE;
+        } else if (hydrometrie < 0.66) {
+            return HydrometrieAffichee.SEC;
+        } else {
+            return HydrometrieAffichee.MOYEN;
         }
     }
 
