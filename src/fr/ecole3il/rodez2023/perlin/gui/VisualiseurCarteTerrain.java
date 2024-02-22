@@ -104,17 +104,15 @@ public class VisualiseurCarteTerrain extends JFrame {
 		        System.out.println("Coordonnées de la souris - X: " + x + ", Y: " + y);
 
 		        if (x >= 0 && x < carte.getLargeur() && y >= 0 && y < carte.getHauteur()) {
-		            try {
-		                // Crée le contenu à afficher dans la fenêtre modale
-						String contenu = "Altitude: " + vte.getAltitudeAffichee(x, y) + "\nHydrométrie: " + vte.getHydrometrieAffichee(x, y)+ "\nTempérature: " + vte.getTemperatureAffichee(x, y);
-
-		                // Affiche une fenêtre modale avec les informations de la tuile
-		              //JOptionPane.showMessageDialog(cartePanel, contenu, "Informations de la tuile", JOptionPane.INFORMATION_MESSAGE);
-		            } catch (TerrainInexistant e1) {
-		                // Gérer l'exception ici, par exemple afficher un message d'erreur
-		                System.out.println("Terrain inexistant : " + e1.getMessage());
-		            }
-		        }
+                    TypeTerrain type= null;
+					try {
+						type = vte.getTypeTerrain(x, y);
+					} catch (TerrainInexistant e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+                    terrainLabel.setText("Terrain: " + type.toString());
+                }
 
 		    }
 
