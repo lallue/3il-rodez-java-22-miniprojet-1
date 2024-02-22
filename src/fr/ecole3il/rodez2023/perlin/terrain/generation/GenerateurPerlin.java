@@ -31,9 +31,9 @@ public class GenerateurPerlin extends GenerateurCarte {
     @Override
     protected Terrain genererTerrain(int i, int j, int largeur, int hauteur) {
         // Initialisation des générateurs de bruit de Perlin 2D pour altitude, hydrométrie et température
-        BruitPerlin2D altitudePerlin = new BruitPerlin2D(getGraine(), 1);
+        BruitPerlin2D altitudePerlin = new BruitPerlin2D(getGraine() * 2, 1);
         BruitPerlin2D hydrometriePerlin = new BruitPerlin2D(getGraine(), 1);
-        BruitPerlin2D temperaturePerlin = new BruitPerlin2D(getGraine() * 2, 1);
+        BruitPerlin2D temperaturePerlin = new BruitPerlin2D(getGraine() * 4, 1);
 
         // Conversion des coordonnées normalisées (entre 0 et 1) en fonction de la largeur et la hauteur
         double x = (double) i / (double) largeur;
