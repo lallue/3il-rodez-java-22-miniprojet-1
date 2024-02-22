@@ -3,7 +3,7 @@ package fr.ecole3il.rodez2023.perlin.terrain.carte;
 /**
  * Exception levée lorsqu'un terrain demandé n'existe pas dans la carte.
  */
-public class TerrainInexistant extends Exception {
+public class TerrainInexistant extends ArrayIndexOutOfBoundsException {
 
     /**
      * Constructeur de la classe TerrainInexistant.

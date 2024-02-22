@@ -40,13 +40,8 @@ public class GenerateurAleatoire extends GenerateurCarte {
         double hydrometrie = this.random.nextDouble(0.0, 1.0);
         double temperature = this.random.nextDouble(0.0, 1.0);
 
-        try {
-            // Création d'un objet Terrain avec les valeurs générées
-            return new Terrain(altitude, hydrometrie, temperature);
-        } catch (MauvaiseValeurException e) {
-            // En cas d'erreur, afficher la trace de la pile et retourner null
-            e.printStackTrace();
-            return null;
-        }
+
+         return new Terrain(altitude, hydrometrie, temperature);
+
     }
 }

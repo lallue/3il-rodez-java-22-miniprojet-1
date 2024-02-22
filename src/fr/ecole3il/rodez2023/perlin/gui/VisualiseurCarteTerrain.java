@@ -23,7 +23,6 @@ import javax.swing.SwingUtilities;
 
 import fr.ecole3il.rodez2023.perlin.terrain.carte.Carte;
 import fr.ecole3il.rodez2023.perlin.terrain.carte.ManipulateurCarte;
-import fr.ecole3il.rodez2023.perlin.terrain.carte.TerrainInexistant;
 import fr.ecole3il.rodez2023.perlin.terrain.concrets.VisualiseurTerrainEnonce;
 import fr.ecole3il.rodez2023.perlin.terrain.elements.TypeTerrain;
 import fr.ecole3il.rodez2023.perlin.terrain.generation.GenerateurAleatoire;
@@ -59,13 +58,7 @@ public class VisualiseurCarteTerrain extends JFrame {
 
         for (int y = 0; y < hauteur; y++) {
             for (int x = 0; x < largeur; x++) {
-                TypeTerrain type= null;
-				try {
-					type = vte.getTypeTerrain(x, y);
-				} catch (TerrainInexistant e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+                TypeTerrain type = vte.getTypeTerrain(x, y);
                 BufferedImage image = type.getImage();
                 g.drawImage(image, x * tuileWidth, y * tuileHeight, tuileWidth, tuileHeight, null);
             }
@@ -92,10 +85,8 @@ public class VisualiseurCarteTerrain extends JFrame {
 		cartePanel.addMouseMotionListener(new MouseAdapter() {
 		    @Override
 		    public void mouseMoved(MouseEvent e) {
-		    	//ajout carte == null pour enlever les erreurs aux démarrage
-		    	if (carte == null) {
-		    		return ;
-		    		}
+		    	if(carte == null)
+		    		return;
 		        int tuileWidth = cartePanel.getWidth() / carte.getLargeur();
 		        int tuileHeight = cartePanel.getHeight() / carte.getHauteur();
 
@@ -105,13 +96,7 @@ public class VisualiseurCarteTerrain extends JFrame {
 		        System.out.println("Coordonnées de la souris - X: " + x + ", Y: " + y);
 
 		        if (x >= 0 && x < carte.getLargeur() && y >= 0 && y < carte.getHauteur()) {
-		            TypeTerrain type= null;
-					try {
-						type = vte.getTypeTerrain(x, y);
-					} catch (TerrainInexistant e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
+		            TypeTerrain type = vte.getTypeTerrain(x, y);
 		            terrainLabel.setText("Terrain: " + type.toString());
 		        }
 		    }
@@ -134,13 +119,7 @@ public class VisualiseurCarteTerrain extends JFrame {
 		        if (x >= 0 && x < carte.getLargeur() && y >= 0 && y < carte.getHauteur()) {
 
 		            // Crée le contenu à afficher dans la fenêtre modale
-		            String contenu = null;
-					try {
-						contenu = "Altitude: " + vte.getAltitudeAffichee(x, y) + "\nHydrométrie: " + vte.getHydrometrieAffichee(x, y)+ "\nTempérature: " + vte.getTemperatureAffichee(x, y);
-					} catch (TerrainInexistant e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
+		            String contenu = "Altitude: " + vte.getAltitudeAffichee(x, y) + "\nHydrométrie: " + vte.getHydrometrieAffichee(x, y)+ "\nTempérature: " + vte.getTemperatureAffichee(x, y);
 
 		            // Affiche une fenêtre modale avec les informations de la tuile
 		            JOptionPane.showMessageDialog(cartePanel, contenu, "Informations de la tuile", JOptionPane.INFORMATION_MESSAGE);
@@ -165,12 +144,7 @@ public class VisualiseurCarteTerrain extends JFrame {
 		            String cheminFichier = fichierSelectionne.getAbsolutePath();
 
 		            // Charger la carte à partir du fichier sélectionné
-		            try {
-						carte = ManipulateurCarte.chargerCarte(cheminFichier);
-					} catch (TerrainInexistant e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
+		            carte = ManipulateurCarte.chargerCarte(cheminFichier);
 
 		            // Repaint ou rafraîchir l'affichage
 		            repaint();
@@ -190,12 +164,7 @@ public class VisualiseurCarteTerrain extends JFrame {
 		            String cheminFichier = fichierSelectionne.getAbsolutePath();
 
 		            // Enregistrer la carte dans le fichier sélectionné
-		            try {
-						ManipulateurCarte.enregistrerCarte(carte, cheminFichier);
-					} catch (TerrainInexistant e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
+		            ManipulateurCarte.enregistrerCarte(carte, cheminFichier);
 		        }
 		    }
 		});
