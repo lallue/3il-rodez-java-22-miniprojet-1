@@ -44,10 +44,6 @@ public class GenerateurPerlin extends GenerateurCarte {
         double hydrometrie = hydrometriePerlin.bruit2D(x, y);
         double temperature = temperaturePerlin.bruit2D(x, y);
 
-        // Normalisation des valeurs hydrométrie et température entre 0 et 1
-        hydrometrie = (hydrometrie + 1) / 2;
-        temperature = (temperature + 1) / 2;
-
         // Création d'un nouvel objet Terrain avec les valeurs générées
         return new Terrain(altitude, hydrometrie, temperature);
     }
