@@ -36,9 +36,9 @@ public class GenerateurAleatoire extends GenerateurCarte {
     @Override
     protected Terrain genererTerrain(int i, int j, int largeur, int hauteur) {
         // Génération de valeurs aléatoires pour l'altitude, l'hydrométrie et la température
-        double altitude = this.random.nextDouble();
-        double hydrometrie = this.random.nextDouble();
-        double temperature = this.random.nextDouble();
+        double altitude = this.random.nextDouble(-1.0, 1.0);
+        double hydrometrie = this.random.nextDouble(0.0, 1.0);
+        double temperature = this.random.nextDouble(0.0, 1.0);
 
         try {
             // Création d'un objet Terrain avec les valeurs générées
