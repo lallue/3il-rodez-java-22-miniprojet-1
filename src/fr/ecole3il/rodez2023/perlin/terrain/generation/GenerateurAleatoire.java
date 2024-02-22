@@ -1,7 +1,7 @@
 package fr.ecole3il.rodez2023.perlin.terrain.generation;
 
-import java.util.Random;
 
+import fr.ecole3il.rodez2023.perlin.math.BruitAleatoire;
 import fr.ecole3il.rodez2023.perlin.terrain.elements.MauvaiseValeurException;
 import fr.ecole3il.rodez2023.perlin.terrain.elements.Terrain;
 
@@ -11,8 +11,6 @@ import fr.ecole3il.rodez2023.perlin.terrain.elements.Terrain;
  */
 public class GenerateurAleatoire extends GenerateurCarte {
 
-    // Générateur de nombres aléatoires
-    private Random random;
 
     /**
      * Constructeur de la classe GenerateurAleatoire.
@@ -21,27 +19,22 @@ public class GenerateurAleatoire extends GenerateurCarte {
      */
     public GenerateurAleatoire(long graine) {
         super(graine);
-        this.random = new Random();
+
     }
 
     /**
      * Génère un terrain aléatoire en fonction des coordonnées spécifiées, de la largeur et de la hauteur.
      *
-     * @param i        Coordonnée x de la position dans la carte.
-     * @param j        Coordonnée y de la position dans la carte.
-     * @param largeur  Largeur de la carte.
-     * @param hauteur  Hauteur de la carte.
-     * @return Un objet Terrain généré aléatoirement.
      */
     @Override
     protected Terrain genererTerrain(int i, int j, int largeur, int hauteur) {
+    	BruitAleatoire bruitAleatoire= new BruitAleatoire(this.getGraine(), 1.0);
         // Génération de valeurs aléatoires pour l'altitude, l'hydrométrie et la température
-        double altitude = this.random.nextDouble(-1.0, 1.0);
-        double hydrometrie = this.random.nextDouble(0.0, 1.0);
-        double temperature = this.random.nextDouble(0.0, 1.0);
-
-
-         return new Terrain(altitude, hydrometrie, temperature);
+        double altitude = bruitAleatoire.bruit2D(-1.0, 1.0);
+        double hydrometrie = bruitAleatoire.bruit2D(0.0, 1.0);
+        double temperature = bruitAleatoire.bruit2D(0.0, 1.0);
+        
+        return new Terrain(altitude, hydrometrie, temperature);
 
     }
 }

@@ -7,7 +7,7 @@ import java.util.Random;
  * Elle utilise la classe Random de Java pour générer des valeurs aléatoires.
  */
 public class BruitAleatoire extends Bruit2D {
-
+	private final Random random;
     /**
      * Constructeur de la classe BruitAleatoire.
      * @param graine La graine utilisée pour initialiser le générateur de bruit.
@@ -16,16 +16,17 @@ public class BruitAleatoire extends Bruit2D {
     public BruitAleatoire(long graine, double resolution) {
         // Appel du constructeur de la classe mère avec la graine et la résolution
         super(graine, resolution);
+        this.random = new Random();
     }
 
     /**
      * Méthode qui génère du bruit aléatoire en deux dimensions.
      * Cette méthode ne dépend pas des coordonnées x et y.
-     * @param x Coordonnée x (non utilisée)
-     * @param y Coordonnée y (non utilisée)
+     * @param x Coordonnée x
+     * @param y Coordonnée y
      * @return Valeur de bruit aléatoire entre 0.0 (inclus) et 1.0 (exclus).
      */
-    Random random = new Random();
+    
     @Override
     public double bruit2D(double x, double y) {
         // Utilisation de la classe Random pour générer du bruit aléatoire
