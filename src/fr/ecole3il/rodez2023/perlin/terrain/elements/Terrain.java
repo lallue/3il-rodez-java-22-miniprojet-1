@@ -23,8 +23,7 @@ public class Terrain {
     public Terrain(double hydrometrie, double temperature, double altitude) {
     	setHydrometrie(hydrometrie);
         setTemperature(temperature);
-        setAltitude(altitude);
-        
+        setAltitude(altitude); 
     }
 
     /**
@@ -61,7 +60,7 @@ public class Terrain {
      * @throws MauvaiseValeurException Si la valeur est en dehors de la plage autorisée [0, 1].
      */
     public void setHydrometrie(double hydrometrie) {
-        hydrometrie = Math.abs(hydrometrie);
+    	hydrometrie = Math.abs(hydrometrie);
         if (hydrometrie < 0 || hydrometrie > 1) {
             throw new MauvaiseValeurException("L'hydrométrie doit être comprise entre 0 et 1.");
         }
