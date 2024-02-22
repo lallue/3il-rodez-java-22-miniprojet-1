@@ -20,7 +20,7 @@ public class Terrain {
      * @param temperature   Valeur de température du terrain.
      * @param altitude      Valeur d'altitude du terrain.
      */
-    public Terrain(double hydrometrie, double temperature, double altitude) {
+    public Terrain( double altitude, double hydrometrie, double temperature) {
     	hydrometrie = Math.abs(hydrometrie);
     	temperature = Math.abs(temperature);
     	

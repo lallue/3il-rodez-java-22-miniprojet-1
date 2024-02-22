@@ -2,7 +2,6 @@ package fr.ecole3il.rodez2023.perlin.terrain.generation;
 
 
 import fr.ecole3il.rodez2023.perlin.math.BruitAleatoire;
-import fr.ecole3il.rodez2023.perlin.terrain.elements.MauvaiseValeurException;
 import fr.ecole3il.rodez2023.perlin.terrain.elements.Terrain;
 
 /**
