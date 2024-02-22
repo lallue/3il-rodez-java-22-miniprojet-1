@@ -5,8 +5,15 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Classe de test pour la classe AltitudeAffichee.
+ */
 class AltitudeAfficheeTest {
 
+    /**
+     * Teste la méthode getValeurLimite() de la classe AltitudeAffichee.
+     * Vérifie que les valeurs limites retournées sont correctes avec une précision de 1e-15.
+     */
     @Test
     void testGetValeurLimite() {
         assertEquals(0.33, AltitudeAffichee.BASSE.getValeurLimite(), 1e-15);
