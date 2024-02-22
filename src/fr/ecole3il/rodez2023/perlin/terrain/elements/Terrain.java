@@ -5,7 +5,8 @@ import fr.ecole3il.rodez2023.perlin.terrain.visualisation.DetermineurTerrain;
 /**
  * Classe représentant un terrain avec des informations 
  * sur l'hydrométrie, la température et l'altitude.
- * @author Alluel toujours plus fort que philibert roquart >.<                                                                                   
+ * 
+ * @author Alluel toujours plus fort que philibert roquart >.<
  */
 public class Terrain {
 
@@ -16,26 +17,25 @@ public class Terrain {
     /**
      * Constructeur de la classe Terrain avec gestion des valeurs par setters.
      *
+     * @param altitude      Valeur d'altitude du terrain.
      * @param hydrometrie   Valeur d'hydrométrie du terrain.
      * @param temperature   Valeur de température du terrain.
-     * @param altitude      Valeur d'altitude du terrain.
      */
-    public Terrain( double altitude, double hydrometrie, double temperature) {
-    	hydrometrie = Math.abs(hydrometrie);
-    	temperature = Math.abs(temperature);
-    	
-    	if (hydrometrie < 0 || hydrometrie > 1) {
+    public Terrain(double altitude, double hydrometrie, double temperature) {
+        hydrometrie = Math.abs(hydrometrie);
+        temperature = Math.abs(temperature);
+
+        if (hydrometrie < 0 || hydrometrie > 1) {
             throw new MauvaiseValeurException("L'hydrométrie doit être comprise entre 0 et 1.");
         }
-    	if (temperature < 0 || temperature > 1) {
+        if (temperature < 0 || temperature > 1) {
             throw new MauvaiseValeurException("La température doit être comprise entre 0 et 1.");
         }
-    	if (altitude < -1 || altitude > 1) {
+        if (altitude < -1 || altitude > 1) {
             throw new MauvaiseValeurException("L'altitude doit être comprise entre -1 et 1.");
         }
 
-    	
-        this.hydrometrie = hydrometrie;        
+        this.hydrometrie = hydrometrie;
         this.temperature = temperature;
         this.altitude = altitude;
     }
