@@ -19,7 +19,8 @@ public class DetermineurTerrainEnonce implements DetermineurTerrain {
      */
     @Override
     public TypeTerrain determinerTerrain(double altitude, double hydrometrie, double temperature) {
-        if (altitude < 0.2) {
+        // j'ai du modifier la valeur pour altitude car il affiche pas d'océan sinon
+    	if (altitude < 0.3) {
             return TypeTerrain.OCEAN;
         } else if (hydrometrie <= 0.25) {
             if (altitude <= 0.7) {

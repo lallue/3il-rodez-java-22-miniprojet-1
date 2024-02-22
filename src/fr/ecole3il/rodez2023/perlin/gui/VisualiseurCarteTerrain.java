@@ -31,7 +31,7 @@ import fr.ecole3il.rodez2023.perlin.terrain.generation.GenerateurPerlin;
 
 /**
  * 
- * @author proussille et alluel
+ * @author proussille
  * La classe VisualiseurCarteTerrain représente un visualiseur de carte de terrain
  * qui permet de charger, enregistrer et générer des cartes, ainsi que d'afficher leur représentation graphique.
  */
@@ -40,7 +40,7 @@ public class VisualiseurCarteTerrain extends JFrame {
     private static final long serialVersionUID = -4664266628089280746L;
     private final JPanel cartePanel;
     private Carte carte;
-    private JLabel terrainLabel; 
+    private JLabel terrainLabel;
     private VisualiseurTerrainEnonce vte;
 
     /**
@@ -59,15 +59,15 @@ public class VisualiseurCarteTerrain extends JFrame {
 
         for (int y = 0; y < hauteur; y++) {
             for (int x = 0; x < largeur; x++) {
-                try {
-                    TypeTerrain type = vte.getTypeTerrain(x, y);
-                    BufferedImage image = type.getImage();
-                    g.drawImage(image, x * tuileWidth, y * tuileHeight, tuileWidth, tuileHeight, null);
-                } catch (TerrainInexistant e) {
-                    
-                    System.out.println("Terrain inexistant : " + e.getMessage());
-                    
-                }
+                TypeTerrain type= null;
+				try {
+					type = vte.getTypeTerrain(x, y);
+				} catch (TerrainInexistant e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+                BufferedImage image = type.getImage();
+                g.drawImage(image, x * tuileWidth, y * tuileHeight, tuileWidth, tuileHeight, null);
             }
         }
     }
@@ -79,8 +79,6 @@ public class VisualiseurCarteTerrain extends JFrame {
 
 		// Panel pour afficher la carte
 		cartePanel = new JPanel() {
-			private static final long serialVersionUID = 1L;
-
 			@Override
 			protected void paintComponent(Graphics g) {
 				super.paintComponent(g);
@@ -94,7 +92,10 @@ public class VisualiseurCarteTerrain extends JFrame {
 		cartePanel.addMouseMotionListener(new MouseAdapter() {
 		    @Override
 		    public void mouseMoved(MouseEvent e) {
-		    	if (carte == null) {return ;}
+		    	//ajout carte == null pour enlever les erreurs aux démarrage
+		    	if (carte == null) {
+		    		return ;
+		    		}
 		        int tuileWidth = cartePanel.getWidth() / carte.getLargeur();
 		        int tuileHeight = cartePanel.getHeight() / carte.getHauteur();
 
@@ -104,16 +105,15 @@ public class VisualiseurCarteTerrain extends JFrame {
 		        System.out.println("Coordonnées de la souris - X: " + x + ", Y: " + y);
 
 		        if (x >= 0 && x < carte.getLargeur() && y >= 0 && y < carte.getHauteur()) {
-                    TypeTerrain type= null;
+		            TypeTerrain type= null;
 					try {
 						type = vte.getTypeTerrain(x, y);
 					} catch (TerrainInexistant e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-                    terrainLabel.setText("Terrain: " + type.toString());
-                }
-
+		            terrainLabel.setText("Terrain: " + type.toString());
+		        }
 		    }
 
 		    @Override
@@ -132,18 +132,19 @@ public class VisualiseurCarteTerrain extends JFrame {
 		        int y = e.getY() / tuileHeight;
 
 		        if (x >= 0 && x < carte.getLargeur() && y >= 0 && y < carte.getHauteur()) {
-		            try {
-		                // Crée le contenu à afficher dans la fenêtre modale
-		                String contenu = "Altitude: " + vte.getAltitudeAffichee(x, y) + "\nHydrométrie: " + vte.getHydrometrieAffichee(x, y)+ "\nTempérature: " + vte.getTemperatureAffichee(x, y);
 
-		                // Affiche une fenêtre modale avec les informations de la tuile
-		                JOptionPane.showMessageDialog(cartePanel, contenu, "Informations de la tuile", JOptionPane.INFORMATION_MESSAGE);
-		            } catch (TerrainInexistant e1) {
-		                // Gérer l'exception ici, par exemple afficher un message d'erreur
-		                System.out.println("Terrain inexistant : " + e1.getMessage());
-		            }
+		            // Crée le contenu à afficher dans la fenêtre modale
+		            String contenu = null;
+					try {
+						contenu = "Altitude: " + vte.getAltitudeAffichee(x, y) + "\nHydrométrie: " + vte.getHydrometrieAffichee(x, y)+ "\nTempérature: " + vte.getTemperatureAffichee(x, y);
+					} catch (TerrainInexistant e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+
+		            // Affiche une fenêtre modale avec les informations de la tuile
+		            JOptionPane.showMessageDialog(cartePanel, contenu, "Informations de la tuile", JOptionPane.INFORMATION_MESSAGE);
 		        }
-
 		    }
 		});
 		add(cartePanel, BorderLayout.CENTER);
