@@ -25,10 +25,10 @@ public class BruitAleatoire extends Bruit2D {
      * @param y Coordonnée y (non utilisée)
      * @return Valeur de bruit aléatoire entre 0.0 (inclus) et 1.0 (exclus).
      */
+    Random random = new Random();
     @Override
     public double bruit2D(double x, double y) {
         // Utilisation de la classe Random pour générer du bruit aléatoire
-        Random random = new Random();
-        return random.nextDouble();
+        return random.nextDouble(x,y);
     }
 }
